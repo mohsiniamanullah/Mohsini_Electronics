@@ -1,0 +1,39 @@
+
+<html>
+<head>
+  
+<title>Make a Purchase</title>  
+</head>
+<body>
+
+<h1>Purchase</h1>
+
+<div>
+<form action = "/purchase" method = "post">
+  <label for="customer_id">Customer Id:</label><br>
+  <input type="number" id="customer_id" name="customer_id" required><br>
+
+  <label for="customer_name">Customer Name:</label><br>
+  <input type="text" id="customer_name" name="customer_name" value="John" required><br>
+
+  <label for="RecNumber">Choose a product:</label>
+  <select id="RecNumber" name="RecNumber">
+  <option value="0">No Product Selected</option>
+  <!-- Place embedded Javascript code here ...  A LOOP traversing code -->
+
+  
+</select><br>
+  
+  <button type = "submit">Purchase</button>
+  
+</form>
+</div> <br><br>
+
+  <div class="center">
+        <a href="/" class="button">Home</a>
+        <a href="contact" class="button">Contact Us</a>
+        <a href="products" class="button">Available Products</a>
+    </div>
+
+</body>
+</html>

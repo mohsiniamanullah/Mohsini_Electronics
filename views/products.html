@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Mohsini Electronics</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class = "header">
+        <h1>Our Products</h1>
+    </div>
+	
+    <div class = "products">
+        <h2>Available Products</h2>
+        <form id="productForm">
+            <label for="productSelect"><strong>Select a Product:</label></strong>
+            <select id="productSelect" name="product">
+                <option value="1000">Smartphone - $1000</option>
+                <option value="200">Wireless Earbuds - $200</option>
+                <option value="800">Laptop - $800</option>
+                <option value="300">Smartwatch - $300</option>
+				<option value="500">HD Camera - $500</option>
+				<option value="450">HP Printer - $450</option>
+				<option value="250">Jlink Screen - $250</option>
+				<option value="240">Tablet - $240</option>
+				
+            </select>
+
+            <button type="button" onclick="calculateTotal()" id = "calculate">Calculate Total</button>
+        </form>
+    <div id="totalCost"></div>
+    </div>
+	
+	
+	<div class = "center">
+        <a href="index.html" class = "button">Home</a>
+        <a href="contact.html" class = "button">Contact Us</a>
+		<a href="orders.html" class = "button">Order</a>
+	</div>
+		 
+    <div class = "footer">
+        <p>&copy; 2024 Mohsini Electronics. All rights reserved.</p>
+    </div>
+</body>
+</html>

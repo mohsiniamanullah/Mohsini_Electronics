@@ -1,0 +1,116 @@
+<!-- A page for customers to purchase products -->
+<html>
+<head>
+  
+<title>Make a Purchase</title>  
+    <style>
+           body {
+            background-color:white;
+           }
+
+          div.header{
+             position: fixed;
+             color:white;
+             top:0px;
+             left:0px;
+             width: 100%;
+             background-color:slateblue;
+             text-align: center;
+             display:block;
+          }
+
+
+          .button {
+              text-align:center;
+              display: inline;
+              margin: 10px 0;
+              padding: 8px 16px;
+              background: #0078d7;
+              color: white;
+              text-decoration: none;
+              border-radius: 5px;
+          }
+
+
+
+    
+          div.center {
+              text-align:center;
+              display:block;
+              margin-top:120px;
+              
+          }   
+
+
+          h1 {
+              display:block;
+              margin-top:10px;
+          }
+
+
+          div.a {
+              text-align:center;
+              margin-top:30px;
+              
+          }
+
+          div.footer {
+              position: fixed;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              background-color:slateblue;
+              color: white;
+              text-align: center;
+          }
+          
+    </style>
+</head>
+
+<body>
+
+<div class = "header">
+<h1>Purchase</h1>
+<P>Thank you for choosing us! :) </P>
+</div>
+
+<div class = "center">
+
+<form action = "/purchase" method = "post">
+  
+  <label for="customer_name">Customer Name:</label>
+  <input type="text" id="customer_name" name="the_customer_name" required /><br>
+
+  <label for="customer_email">Customer Email:</label>
+  <input type="text" id="customer_email" name="the_customer_email" required /><br>
+
+  <label for="RecNumber">Choose a product:</label>
+  <select id="RecNumber" name="the_RecNumber" required>
+  <option value="0">No Product Selected</option>
+  <!-- Place embedded Javascript code here ...  A LOOP traversing code -->
+
+  <% allproducts.forEach(a_product => { %>
+  <option value="<%= a_product.RecNumber %>"><%= a_product.ID %> - 
+  <%= a_product.Name %><%= a_product.Description %><%= a_product.Cost %> </option>
+
+   <% }) %>
+  
+</select><br>
+  
+  <button type = "submit" class = "button">Purchase</button>
+  
+</form>
+</div> <br><br>
+
+  <div class="center">
+        <a href="/" class="button">Home</a>
+        <a href="contact" class="button">Contact Us</a>
+        <a href="products" class="button">Available Products</a>
+    </div>
+
+    <div class = "footer">
+        <p>&copy; 2024 Mohsini Electronics. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

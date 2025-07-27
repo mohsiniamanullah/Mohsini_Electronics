@@ -1,0 +1,94 @@
+<!-- This page is to confirm the success of the purchase made:
+views/success.ejs
+-->
+
+
+<html>
+	<head>
+		<title>Purchase Confiramtion</title>
+
+		<div class = "header">
+			<p>Thank you for shopping with us!</p>
+		</div>
+		
+
+		<style>
+           
+           div.header{
+               position: fixed;
+               color:white;
+               top:0px;
+               left:0px;
+               width: 100%;
+               background-color:slateblue;
+               text-align: center;
+               display:block;
+            }
+
+
+            .button {
+                text-align:center;
+                display: inline;
+                margin: 10px 0;
+                padding: 8px 16px;
+                background: #0078d7;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+
+
+
+    
+           div.center {
+                text-align:center;
+                display:block;
+                margin-top:250px;
+            }   
+
+
+            h1 {
+                display:block;
+                margin-top:10px;
+            }
+
+
+            div.a {
+                text-align:center;
+                margin-top:30px;
+            
+            }
+
+            div.footer {
+                position: fixed;
+               	left: 0;
+               	bottom: 0;
+               	width: 100%;
+               	background-color:slateblue;
+               	color: white;
+               	text-align: center;
+         	}	
+
+
+    </style>
+	</head>
+
+	<body>
+	<h1>Successfully purchased the product!<h1>
+	<!--<p>Place Embeded JavaScript here...</p> --> 
+	<p>Customer named <%= customerName %> has registered for <%= regdProductName %>) - (
+		ProductID: <%= regdProductID %>) </p>
+
+	<div class = "center">
+	<a href="/" class="button">Go back to Home</a>
+	</div>
+
+	<div class = "footer">
+        <p>&copy; 2024 Mohsini Electronics. All rights reserved.</p>
+    </div>
+
+	</body>
+
+
+
+</html>

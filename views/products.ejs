@@ -1,0 +1,134 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Mohsini Electronics</title>
+    <!--<link rel="stylesheet" href="styles.css">-->
+        <style>
+            body {
+                background-color: white;
+            }
+
+          div.products {
+                text-align:center;
+                margin-top:130px;
+          }
+
+
+           div.header{
+               position: fixed;
+               top:0px;
+               left:0px;
+               width: 100%;
+               background-color:slateblue;
+               color: white;
+               text-align: center;
+               display:block;
+            }
+
+
+            .button {
+                text-align:center;
+                display: inline-block;
+                margin: 10px 0;
+                padding: 8px 16px;
+                background: #0078d7;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+
+
+
+           #calculate {
+                text-align:center;
+                display: inline-block;
+                padding: 2.5px 6px;
+                background: #0078d7;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+
+
+           div.center {
+                text-align:center;
+                display:block;
+                margin-top:40px;  
+            }   
+
+
+            div.a {
+                text-align:center;
+                
+            }
+
+            div.footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color:slateblue;
+                color: white;
+                text-align: center;
+            }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <h1>Our Products</h1>
+    </div>
+
+    <div class="products">
+        <h2>Available Products</h2>
+        <form id="productForm">
+            <label for="productSelect"><strong>Select a Product:</strong></label>
+            <select id="productSelect" name="product">
+                <option value="1000">Smartphone - $1000</option>
+                <option value="200">Wireless Earbuds - $200</option>
+                <option value="800">Laptop - $800</option>
+                <option value="300">Smartwatch - $300</option>
+            </select>
+
+            <button type="button" onclick="calculateTotal()" id="calculate">Calculate Total</button>
+        </form>
+        <div id="totalCost"></div>
+    </div>
+
+    <div class="center">
+        <a href="/" class="button">Home</a>
+        <a href="contact" class="button">Contact Us</a>
+        <a href="purchase" class="button">Make a purchase</a>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Mohsini Electronics. All rights reserved.</p>
+    </div>
+
+    <script>
+        // This function is triggered by an event (onclick event).
+        function calculateTotal() {
+            const productPrice = parseFloat(document.getElementById('productSelect').value);
+            // parseFloat converts a string into a floating-point number
+
+            const tax = productPrice * 0.07;
+            const shippingFee = productPrice * 0.01;
+            const totalCost = (productPrice + tax + shippingFee).toFixed(2);
+
+            /* Update the DOM with Total Cost; Finds an HTML element with the id of 'totalCost' 
+            and updates its innerHTML with a formatted string. */
+            document.getElementById('totalCost').innerHTML = `
+                <h3>Total Cost</h3>
+                <p>Price: $${productPrice.toFixed(2)}</p>
+                <p>Tax (7%): $${tax.toFixed(2)}</p>
+                <p>Shipping Fee (1%): $${shippingFee.toFixed(2)}</p>
+                <p><strong>Total: $${totalCost}</strong></p>
+            `;
+        }
+    </script>
+</body>
+</html>
